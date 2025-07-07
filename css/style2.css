@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../images/wheels_spec_color_car_1.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.hero #backVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.hero .logo {
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.hero .logo img {
+  width: 80px;
+}
+.hero .sidebar {
+  width: 250px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+}
+.hero .sidebar .text-box {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 45%;
+  text-align: center;
+}
+.hero .sidebar .text-box h1 {
+  font-size: 28px;
+  font-weight: 100;
+}
+.hero .sidebar .text-box h4 {
+  margin: 7px 0 10px;
+}
+.hero .sidebar .text-box .line {
+  width: 80px;
+  height: 1px;
+  margin: auto;
+  background: #000;
+}
+.hero .content {
+  color: #ffffff;
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hero .content h1 {
+  font-size: 100px;
+}
+.hero .content p {
+  margin: 10px 0 40px;
+}
+.hero .content .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  padding: 10px 0;
+  background: #ffffff;
+  color: #000;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.hero .content .btn img {
+  width: 30px;
+  margin-right: 15px;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #backVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #backVido {
+    width: auto;
+    height: 100%;
+  }
+}

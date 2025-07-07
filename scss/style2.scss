@@ -1,0 +1,102 @@
+* {
+	margin: 0; // 設定所有元素的外距為 0
+	padding: 0; // 設定所有元素的內距為 0
+}
+
+.hero {
+	height: 100vh; // 高度為視窗高度
+	width: 100%; // 寬度 100%
+	background-image: url(../images/wheels_spec_color_car_1.png); // 設定背景圖片
+	background-position: center; // 背景圖片置中
+	background-size: cover; // 背景圖片覆蓋整個區塊
+	position: relative; // 相對定位
+	#backVideo {
+		position: absolute; // 絕對定位
+		right: 0; // 靠右
+		bottom: 0; // 靠下
+		display: none; // 預設隱藏
+	}
+	.logo {
+		width: 250px; // 標誌區塊寬度 250px
+		height: 100px; // 標誌區塊高度 100px
+		position: absolute; // 絕對定位
+		background: transparent; // 背景透明（拼字錯誤，應為 transparent）
+		display: flex; // 使用 flex 排版
+		justify-content: center; // 水平置中
+		align-items: center; // 垂直置中
+		z-index: 2; // 堆疊順序 2
+		img {
+			width: 80px; // 標誌圖片寬度 80px
+		}
+	}
+	.sidebar {
+		width: 250px; // 側邊欄寬度 250px
+		height: 100vh; // 側邊欄高度為視窗高度
+		top: 0; // 距離頂部 0
+		left: 0; // 距離左側 0
+		background: rgba(255,255,255,0.6); // 白色半透明背景
+		position: absolute; // 絕對定位
+		.text-box {
+			transform: rotate(-90deg); // 旋轉 -90 度
+			position: absolute; // 絕對定位
+			top: 45%; // 距離頂部 45%
+			text-align: center; // 文字置中
+			h1 {
+				font-size: 28px; // 標題字體大小 28px
+				font-weight: 100; // 字重 100
+			}
+			h4 {
+				margin: 7px 0 10px; // 上 7px、右 0、下 10px 外距
+			}
+			.line {
+				width: 80px; // 線條寬度 80px
+				height: 1px; // 線條高度 1px
+				margin: auto; // 自動置中
+				background: #000; // 線條顏色黑色
+			}
+		}
+	}
+	.content {
+		color: #ffffff; // 文字顏色白色
+		position: absolute; // 絕對定位
+		right: 200px; // 距離右側 200px
+		top: 50%; // 距離頂部 50%
+		transform: translateY(-50%); // 垂直置中
+		h1 {
+			font-size: 100px; // 標題字體大小 100px
+		}
+		p {
+			margin: 10px 0 40px; // 上 10px、右 0、下 40px 外距
+		}
+		.btn {
+			display: flex; // 使用 flex 排版
+			align-items: center; // 垂直置中
+			justify-content: center; // 水平置中
+			width: 170px; // 按鈕寬度 170px
+			padding: 10px 0; // 上下 10px 內距
+			background: #ffffff; // 背景顏色白色
+			color: #000; // 文字顏色黑色
+			border-radius: 3px; // 邊框圓角 3px
+			cursor: pointer; // 滑鼠指標為指標型
+			img {
+				width: 30px; // 圖片寬度 30px
+				margin-right: 15px; // 右邊距 15px
+			}
+		}
+	}
+	
+}
+
+@media (min-aspect-ratio: 16/9) {
+	#backVideo {
+		width: 100%; // 寬度 100%
+		height: auto; // 高度自動
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	#backVido {
+		width: auto; // 寬度自動
+		height: 100%; // 高度 100%
+	}
+}

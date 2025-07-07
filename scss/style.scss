@@ -1,85 +1,85 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+    margin: 0; // 設定所有元素的外距為 0
+    padding: 0; // 設定所有元素的內距為 0
+    box-sizing: border-box; // 設定盒模型為 border-box
+    font-family: 'Poppins', sans-serif; // 設定全站字型
 }
 
 .hero {
-	width: 100%;
-	height: 100vh;
-	background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
-	position: relative;
-	padding: 0 5%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	nav {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding: 20px 8%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		.logo {
-			width: 80px;
-		}
-		ul {
-			li {
-				list-style: none;
-				display: inline-block;
-				margin-left: 40px;
-				a {
-					text-decoration: none;
-					color: #ffffff;
-					font-size: 17px;
-				}
-			}
-		}
-	}
-	.content {
-		text-align: center;
-		h1 {
-			font-size: 160px;
-			color: #ffffff;
-			font-weight: 600;
-			transition: 0.5s;
-			&:hover {
-				-webkit-text-stroke: 2px #ffffff;
-				color: transparent;
-			}
-		}
-		a {
-			text-decoration: none;
-			display: inline-block;
-			color: #ffffff;
-			font-size: 24px;
-			border: 2px solid #ffffff;
-			padding: 14px 70px;
-			border-radius: 50px;
-			margin-top: 20px;
-		}
-	}
-	.back-video {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-	}
+    width: 100%; // 寬度 100%
+    height: 100vh; // 高度為視窗高度
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3)); // 設定線性漸層背景
+    position: relative; // 相對定位
+    padding: 0 5%; // 左右內距 5%
+    display: flex; // 使用 flex 排版
+    align-items: center; // 垂直置中
+    justify-content: center; // 水平置中
+    nav {
+        width: 100%; // 寬度 100%
+        position: absolute; // 絕對定位
+        top: 0; // 距離頂部 0
+        left: 0; // 距離左側 0
+        padding: 20px 8%; // 上下 20px，左右 8% 內距
+        display: flex; // 使用 flex 排版
+        align-items: center; // 垂直置中
+        justify-content: space-between; // 兩端對齊
+        .logo {
+            width: 80px; // 標誌寬度 80px
+        }
+        ul {
+            li {
+                list-style: none; // 移除項目符號
+                display: inline-block; // 行內區塊
+                margin-left: 40px; // 左邊距 40px
+                a {
+                    text-decoration: none; // 移除底線
+                    color: #ffffff; // 文字顏色白色
+                    font-size: 17px; // 字體大小 17px
+                }
+            }
+        }
+    }
+    .content {
+        text-align: center; // 文字置中
+        h1 {
+            font-size: 160px; // 標題字體大小 160px
+            color: #ffffff; // 文字顏色白色
+            font-weight: 600; // 字重 600
+            transition: 0.5s; // 動畫過渡 0.5 秒
+            &:hover {
+                -webkit-text-stroke: 2px #ffffff; // 滑鼠懸停時描邊
+                color: transparent; // 文字顏色透明
+            }
+        }
+        a {
+            text-decoration: none; // 移除底線
+            display: inline-block; // 行內區塊
+            color: #ffffff; // 文字顏色白色
+            font-size: 24px; // 字體大小 24px
+            border: 2px solid #ffffff; // 白色邊框 2px
+            padding: 14px 70px; // 上下 14px，左右 70px 內距
+            border-radius: 50px; // 邊框圓角 50px
+            margin-top: 20px; // 上邊距 20px
+        }
+    }
+    .back-video {
+        position: absolute; // 絕對定位
+        right: 0; // 靠右
+        bottom: 0; // 靠下
+        z-index: -1; // 堆疊順序 -1
+    }
 }
 
 @media (min-aspect-ratio: 16/9) {
-	.back-video {
-		width: 100%;
-		height: auto;
-	}
+    .back-video {
+        width: 100%; // 寬度 100%
+        height: auto; // 高度自動
+    }
 }
 
 @media (max-aspect-ratio: 16/9) {
-	.back-video {
-		width: auto;
-		height: 100%;
-	}
+    .back-video {
+        width: auto; // 寬度自動
+        height: 100%; // 高度 100%
+    }
 }
