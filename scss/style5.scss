@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap'); // 引入 Google Fonts
+
+:root { // 根變數
+    --primary-color: #3a4052 // 主要顏色變數
+}
+
+* { // 全域選擇器
+    box-sizing: border-box; // 設定盒模型為 border-box
+    margin: 0; // 移除預設外距
+}
+
+body { // 主體
+    font-family: 'Open Sans', sans-serif; // 設定字型
+    line-height: 1.5; // 行高
+    a { // 連結樣式
+        text-decoration: none; // 移除底線
+        color: var(--primary-color); // 使用主要顏色
+    }
+    h1 { // 標題1樣式
+        font-weight: 300; // 字重
+        font-size: 60px; // 字體大小
+        line-height: 1.2; // 行高
+        margin-bottom: 15px; // 下方外距
+    }
+    
+    .showcase{ // 首頁展示區
+        position: relative; // 相對定位
+        height: 100vh; // 高度佔滿整個視窗
+        display: flex; // 使用 flex 排版
+        flex-direction: column; // 垂直排列
+        align-items: center; // 水平置中
+        justify-content: center; // 垂直置中
+        text-align: center; // 文字置中
+        padding: 0 20px; // 左右內距
+        color: #ffffff; // 文字顏色白色
+        .video-container{ // 影片容器
+            position: absolute; // 絕對定位
+            top: 0; // 上方對齊
+            left: 0; // 左側對齊
+            width: 100%; // 寬度100%
+            height: 100%; // 高度100%
+            overflow: hidden; // 超出隱藏
+            background: var(--primary-color) url('images/DSC_1965.JPG') no-repeat center center/cover; // 背景顏色與圖片
+            &:after { // 疊加遮罩
+                content:''; // 內容為空
+                position: absolute; // 絕對定位
+                top: 0; // 上方對齊
+                left: 0; // 左側對齊
+                width: 100%; // 寬度100%
+                height: 100%; // 高度100%
+                background: rgba(0, 0, 0, 0.6); // 半透明黑色遮罩
+            }
+            video { // 影片元素
+                min-width: 100%; // 最小寬度100%
+                min-height: 100%; // 最小高度100%
+                object-fit: cover; // 填滿容器
+                position: absolute; // 絕對定位
+                top: 50%; // 垂直置中
+                left: 50%; // 水平置中
+                transform: translate(-50%, -50%); // 精確置中
+            }
+        }
+        .content { // 內容區
+            z-index: 10; // 疊層順序
+            .btn { // 按鈕樣式
+                display: inline-block; // 行內區塊
+                padding: 10px 30px; // 內距
+                background: var(--primary-color); // 背景色
+                color: #ffffff; // 文字顏色
+                border: 1px solid #ffffff; // 白色邊框
+                border-radius: 5px; // 圓角
+                margin-top: 25px; // 上方外距
+                opacity: 0.7; // 透明度
+                &:hover { // 滑鼠懸停
+                    transform: scale(0.98); // 縮小效果
+                }
+            }
+        }
+    }
+    
+    #about { // 關於區塊
+        padding: 40px; // 內距
+        text-align: center; // 文字置中
+        p { // 段落樣式
+            font-size: 1.2rem; // 字體大小
+            max-width: 600px; // 最大寬度
+            margin: auto; // 自動置中
+        }
+        h2 { // 標題2樣式
+            margin: 30px 0; // 上下外距
+            color: var(--primary-color); // 主要顏色
+        }
+        .social { // 社群連結區
+            a { // 連結樣式
+                margin: 0 5px; // 左右外距
+            }
+        }
+    }
+}
+
+
+@media (min-aspect-ratio: 16/9) { // 螢幕比例大於等於16:9
+        .video-background { // 影片背景
+            width: 100%; // 寬度100%
+            height: auto; // 高度自動
+        }
+}
+
+@media (max-aspect-ratio: 16/9) { // 螢幕比例小於等於16:9
+        .video-background { // 影片背景
+            width: auto; // 寬度自動
+            height: 100%; // 高度100%
+        }
+}
