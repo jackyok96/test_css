@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap'); // 載入 Google Fonts 字型
+
+:root { // 根元素變數
+    --overlay-color: #999999; // 定義覆蓋層顏色變數
+}
+
+* { // 全域選擇器，選取所有元素
+    margin: 0; // 設定外距為 0
+    padding: 0; // 設定內距為 0
+    box-sizing: border-box; // 盒模型以 border 計算寬高
+    font-family: 'Poppins', sans-serif; // 設定全域字型為 Poppins
+}
+
+.showcase { // 主展示區塊
+    position: absolute; // 絕對定位
+    right: 0; // 右對齊
+    width: 100%; // 寬度 100%
+    min-height: 100vh; // 最小高度為視窗高度
+    padding: 100px; // 內距 100px
+    display: flex; // 使用 flex 排版
+    justify-content: space-between; // 兩端對齊
+    align-items: center; // 垂直置中
+    background: #111111; // 背景色深灰
+    color: #ffffff; // 文字顏色白色
+    z-index: 2; // 堆疊順序 2
+    transition: .5s; // 動畫過渡 0.5 秒
+    &.active { // 當有 active 類別時
+        right: 300px; // 右側偏移 300px
+    }
+    header { // 頁首區塊
+        position: absolute; // 絕對定位
+        top: 0; // 上對齊
+        left: 0; // 左對齊
+        width: 100%; // 寬度 100%
+        padding: 40px 100px; // 內距 上下 40px 左右 100px
+        z-index: 999; // 堆疊順序 999
+        display: flex; // 使用 flex 排版
+        align-items: center; // 垂直置中
+        justify-content: space-between; // 兩端對齊
+        .logo { // 標誌區塊
+            text-transform: uppercase; // 英文字母大寫
+            cursor: pointer; // 滑鼠游標為指標
+        }
+        .toggle { // 漢堡選單按鈕
+            position: relative; // 相對定位
+            width: 60px; // 寬度 60px
+            height: 60px; // 高度 60px
+            background: url('images/menu.png') no-repeat; // 設定背景圖片
+            background-size: 30px; // 背景圖片大小 30px
+            background-position: center; // 背景圖片置中
+            cursor: pointer; // 滑鼠游標為指標
+            &.active { // 有 active 類別時
+                background: url('images/close.png') no-repeat; // 換成關閉圖示
+                background-size: 30px; // 背景圖片大小 30px
+                background-position: center; // 背景圖片置中
+            }
+        }	
+    }
+    video { // 背景影片
+        position: absolute; // 絕對定位
+        top: 0; // 上對齊
+        left: 0; // 左對齊
+        width: 100%; // 寬度 100%
+        height: 100%; // 高度 100%
+        object-fit: cover; // 填滿容器
+        opacity: 0.8; // 透明度 0.8
+    }
+    .overlay { // 覆蓋層
+        position: absolute; // 絕對定位
+        top: 0; // 上對齊
+        left: 0; // 左對齊
+        width: 100%; // 寬度 100%
+        height: 100%; // 高度 100%
+        background: var(--overlay-color); // 使用變數顏色
+        mix-blend-mode: overlay; // 混合模式 overlay
+    }
+    .text { // 文字內容區塊
+        position: relative; // 相對定位
+        z-index: 10; // 堆疊順序 10
+        h2 { // 主標題
+            font-size: 5em; // 字體大小 5em
+            font-weight: 800; // 字重 800
+            line-height: 1em; // 行高 1em
+            text-transform: uppercase; // 英文字母大寫
+        }
+        h3 { // 副標題
+            font-size: 4em; // 字體大小 4em
+            font-weight: 700; // 字重 700
+            line-height: 1em; // 行高 1em
+            text-transform: uppercase; // 英文字母大寫
+        }
+        p { // 內文
+            font-size: 1.1em; // 字體大小 1.1em
+            margin: 20px 0; // 上下外距 20px
+            font-weight: 400; // 字重 400
+            max-width: 700px; // 最大寬度 700px
+        }
+        a { // 連結按鈕
+            display: inline-block; // 行內區塊
+            font-size: 1em; // 字體大小 1em
+            background: #ffffff; // 背景色白色
+            padding: 10px 30px; // 內距 上下 10px 左右 30px
+            text-decoration: none; // 無文字裝飾
+            color: #000000; // 文字顏色黑色
+            margin-top: 10px; // 上方外距 10px
+            text-transform: uppercase; // 英文字母大寫
+            letter-spacing: 2px; // 字距 2px
+            transition: 0.2s; // 動畫過渡 0.2 秒
+            &:hover { // 滑鼠懸停時
+                letter-spacing: 6px; // 字距變大 6px
+            }
+        }
+    }
+    .social { // 社群連結區塊
+        position: absolute; // 絕對定位
+        bottom: 20px; // 底部 20px
+        z-index: 10; // 堆疊順序 10
+        display: flex; // 使用 flex 排版
+        justify-content: center; // 水平置中
+        align-items: center; // 垂直置中
+        li { // 列表項目
+            list-style: none; // 無項目符號
+            a { // 連結
+                display: inline-block; // 行內區塊
+                filter: invert(1); // 顏色反轉
+                margin-right: 20px; // 右外距 20px
+                transform: scale(0.5); // 縮放 0.5 倍
+                transition: 0.5s; // 動畫過渡 0.5 秒
+                &:hover { // 滑鼠懸停時
+                    transform: scale(0.5) translateY(-15px); // 上移 15px
+                }
+            }
+        }
+    }
+}
+
+.menu { // 側邊選單區塊
+    position: absolute; // 絕對定位
+    top: 0; // 上對齊
+    right: 0; // 右對齊
+    width: 300px; // 寬度 300px
+    height: 100%; // 高度 100%
+    display: flex; // 使用 flex 排版
+    align-items: center; // 垂直置中
+    justify-content: center; // 水平置中
+    ul { // 選單列表
+        position: relative; // 相對定位
+        list-style: none; // 無項目符號
+        li { // 列表項目
+            a { // 連結
+                text-decoration: none; // 無文字裝飾
+                font-size: 24px; // 字體大小 24px
+                color: #111111; // 文字顏色深灰
+                &:hover { // 滑鼠懸停時
+                    color: var(--overlay-color); // 文字顏色變為覆蓋層顏色
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 789px) { // 螢幕寬度小於等於 789px 時
+    .showcase, .showcase header {
+        padding: 40px; // 內距 40px
+    }
+    
+    .text {
+        h2 {
+            font-size: 3em; // 字體大小 3em
+        }
+        h3 {
+            font-size: 2em; // 字體大小 2em
+        }
+    }
+}
