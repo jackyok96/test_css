@@ -1,0 +1,140 @@
+* {
+    margin: 0; // 設定所有元素的外距為 0
+    padding: 0; // 設定所有元素的內距為 0
+    box-sizing: border-box; // 設定盒模型為 border-box
+    font-family: 'Roboto', sans-serif; // 設定全站字型為 Roboto
+}
+
+.header {
+    height: 100vh; // 高度為視窗高度
+    width: 100%; // 寬度 100%
+    padding: 0 8%; // 左右內距 8%
+//	background: #080008; // 背景顏色（已註解）
+    position: relative; // 相對定位
+    nav {
+        display: flex; // 使用 flex 排版
+        align-items: center; // 垂直置中
+        justify-content: space-between; // 兩端對齊
+        .logo {
+            width: 140px; // 標誌寬度 140px
+        }
+        .nav-links {
+            padding: 28px 0; // 上下 28px 內距
+            li {
+                display: inline-block; // 行內區塊
+                margin: 0 15px; // 左右外距 15px
+                position: relative; // 相對定位
+                &.btn {
+                    background: #ff3d00; // 背景顏色橘紅
+                    color: #ffffff; // 文字顏色白色
+                    padding: 10px 30px; // 上下 10px，左右 30px 內距
+                    border-radius: 3px; // 邊框圓角 3px
+                    cursor: pointer; // 滑鼠指標為指標型
+                }
+                a {
+                    text-decoration: none; // 移除底線
+                    color: #ffffff; // 文字顏色白色
+                    padding: 5px 0; // 上下 5px 內距
+                    &::after {
+                        content: ''; // 產生偽元素內容
+                        background: #ff3d00; // 背景顏色橘紅
+                        width: 0; // 初始寬度 0
+                        height: 2px; // 高度 2px
+                        position: absolute; // 絕對定位
+                        bottom: 0; // 靠底部
+                        left: 0; // 靠左側
+                        transition: width 0.5s; // 寬度過渡動畫 0.5 秒
+                    }						
+                    &:hover {
+                        &::after {
+                            width: 100%; // 滑鼠懸停時寬度 100%
+                        }						
+                    }
+                }
+            }
+        }
+    }
+    
+    .content {
+        position: absolute; // 絕對定位
+        top: 50%; // 距離頂部 50%
+        left: 50%; // 距離左側 50%
+        width: 90%; // 寬度 90%
+        max-width: 900px; // 最大寬度 900px
+        transform: translate(-50%, -50%); // 置中
+        text-align: center; // 文字置中
+        color: #ffffff; // 文字顏色白色
+        padding-top: 50px; // 上內距 50px
+        h1 {
+            font-size: 65px; // 標題字體大小 65px
+            font-weight: 600; // 字重 600
+            margin-bottom: 40px; // 下外距 40px
+        }
+        form {
+            background: #ffffff; // 背景顏色白色
+            padding: 10px; // 內距 10px
+            border-radius: 8px; // 邊框圓角 8px
+            display: flex; // 使用 flex 排版
+            input {
+                flex: 1; // 彈性填滿
+                border: none; // 無邊框
+                outline: none; // 無外框
+                padding: 0 20px; // 左右內距 20px
+                font-size: 18px; // 字體大小 18px
+            }
+            button {
+                background: #ff3d00; // 背景顏色橘紅
+                color: #ffffff; // 文字顏色白色
+                padding: 15px 40px; // 上下 15px，左右 40px 內距
+                border: none; // 無邊框
+                border-radius: 6px; // 邊框圓角 6px
+                cursor: pointer; // 滑鼠指標為指標型
+            }
+        }
+        .category-list {
+            display: flex; // 使用 flex 排版
+            align-items: center; // 垂直置中
+            justify-content: center; // 水平置中
+            margin-top: 40px; // 上外距 40px
+            .category {
+                width: 80px; // 寬度 80px
+                height: 80px; // 高度 80px
+                background: rgba(255,61,0,0.15); // 橘紅半透明背景
+                margin: 0 10px; // 左右外距 10px
+                font-size: 12px; // 字體大小 12px
+                display: flex; // 使用 flex 排版
+                align-items: center; // 垂直置中
+                justify-content: center; // 水平置中
+                flex-direction: column; // 垂直排列
+                img {
+                    width: 25px; // 圖片寬度 25px
+                    margin-bottom: 5px; // 下外距 5px
+                }
+            }
+        }
+    }
+    .back-video {
+        position: absolute; // 絕對定位
+        right: 0; // 靠右
+        bottom: 0; // 靠下
+        min-width: 100%; // 最小寬度 100%
+        min-height: 100%; // 最小高度 100%
+        width: auto; // 寬度自動
+        height: auto; // 高度自動
+        z-index: -100; // 堆疊順序 -100
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #backVideo {
+        width: 100%; // 寬度 100%
+        height: auto; // 高度自動
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #backVido {
+        width: auto; // 寬度自動
+        height: 100%; // 高度 100%
+    }
+}
