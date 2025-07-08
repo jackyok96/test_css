@@ -1,0 +1,82 @@
+* { // 所有元素
+    margin: 0; // 外距設為0
+    padding: 0; // 內距設為0
+    box-sizing: border-box; // 盒模型以邊框為基準
+}
+
+body { // 網頁主體
+    .container { // 容器類別
+        max-width: 960px; // 最大寬度960px
+        padding-left: 1rem; // 左側內距1rem
+        padding-right: 1rem; // 右側內距1rem
+        margin: auto; // 水平置中
+        text-align: center; // 文字置中
+    }	
+    margin: 0; // 外距設為0
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif; // 字型設定
+    font-size: 1rem; // 字體大小1rem
+    line-height: 1.5; // 行高1.5
+    color: #333333; // 文字顏色
+    overflow-x: hidden; // 隱藏水平滾動條
+    .v-header { // 頁首區塊
+        height: 100vh; // 高度為視窗高度
+        display: flex; // 使用flex排版
+        align-items: center; // 垂直置中
+        color: #ffffff; // 文字顏色白色
+        .fullscreen-video-wrap { // 全螢幕影片包裹
+            position: absolute; // 絕對定位
+            top: 0; // 上方0
+            left: 0; // 左側0
+            width: 100%; // 寬度100%
+            height: 100vh; // 高度為視窗高度
+            overflow: hidden; // 隱藏溢出內容
+            video { // 影片標籤
+                min-width: 100%; // 最小寬度100%
+                min-height: 100%; // 最小高度100%
+            }
+        }	
+        .header-overlay { // 頁首覆蓋層
+            width: 100vw; // 寬度100視窗寬
+            height: 100vh; // 高度100視窗高
+            position: absolute; // 絕對定位
+            top: 0; // 上方0
+            left: 0; // 左側0
+            background: #225470; // 背景色
+            z-index: 1; // 堆疊順序1
+            opacity: 0.85; // 透明度0.85
+        }
+        .header-content { // 頁首內容
+            z-index: 2; // 堆疊順序2
+            h1 { // 標題
+                font-size: 50px; // 字體大小50px
+                margin-bottom: 0; // 下方外距0
+            }
+            p { // 段落
+                font-size: 1.5rem; // 字體大小1.5rem
+                display: block; // 區塊顯示
+                padding-bottom: 2rem; // 下方內距2rem
+            }
+            .btn { // 按鈕
+                background: #34b3a0; // 背景色
+                color: #ffffff; // 文字顏色白色
+                font-size: 1.2rem; // 字體大小1.2rem
+                padding: 1rem 2rem; // 內距
+                text-decoration: none; // 無底線
+            }
+        }		
+    }
+    .section { // 區塊
+        padding: 20px 0; // 上下內距20px
+    }
+    .section-b { // 深色區塊
+        background: #333333; // 背景色
+        color: #ffffff; // 文字顏色白色
+    }	
+}
+
+@media (max-width:960px) { // 響應式設計：螢幕寬度小於960px
+    .container { // 容器
+        padding-right: 3rem; // 右側內距3rem
+        padding-left: 3rem; // 左側內距3rem
+    }
+}
