@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgba(0, 0, 100, 0.5);
+  height: 100vh;
+}
+header .video-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+header .nav {
+  background: rgba(0, 0, 0, 0.5);
+  height: 80px;
+}
+header .nav .logo {
+  margin: 10px 50px;
+  height: 60px;
+}
+header .nav .menu {
+  float: right;
+  list-style: none;
+  margin: 20px;
+}
+header .nav .menu li {
+  display: inline-block;
+  margin: 10px 5px;
+}
+header .nav .menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #ffffff;
+}
+header .nav .menu li a:hover {
+  background: coral;
+  border-bottom: 1px solid coral;
+  transition: 0.4s;
+}
+header .msg {
+  position: relative;
+  text-align: center;
+  font-family: sans-serif;
+  color: #ffffff;
+  top: 200px;
+}
+header .msg h1 {
+  font-size: 52px;
+  margin: 25px;
+}
+header .msg .btn {
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 7px 28px;
+  text-decoration: none;
+  border: 1px solid coral;
+  border-radius: 25px;
+}
+header .msg .btn1 {
+  background: coral;
+  color: #ffffff;
+}
+header .msg .btn2:hover {
+  background: coral;
+  transition: 0.4s;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-background {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-background {
+    width: auto;
+    height: 100%;
+  }
+}

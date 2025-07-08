@@ -1,0 +1,94 @@
+* { // 全域選擇器，選取所有元素
+    margin: 0; // 設定外距為 0
+    padding: 0; // 設定內距為 0
+}
+header { // 頁首區塊
+    background: rgba(0,0,100,0.5); // 半透明深藍背景
+    height: 100vh; // 高度為視窗高度
+    .video-background { // 影片背景區塊
+        position: absolute; // 絕對定位
+        right: 0; // 右對齊
+        bottom: 0; // 下對齊
+        min-width: 100%; // 最小寬度 100%
+        min-height: 100%; // 最小高度 100%
+        width: auto; // 寬度自動
+        height: auto; // 高度自動
+        z-index: -100; // 堆疊順序設為 -100，置於底層
+    }
+
+    .nav { // 導覽列區塊
+        background: rgba(0,0,0,0.5); // 半透明黑色背景
+        height: 80px; // 高度 80px
+        .logo { // 標誌區塊
+            margin: 10px 50px; // 上下 10px 左右 50px 外距
+            height: 60px; // 高度 60px
+        }
+        .menu { // 選單區塊
+            float: right; // 右側排列
+            list-style: none; // 無項目符號
+            margin: 20px; // 外距 20px
+            li { // 選單項目
+                display: inline-block; // 行內區塊
+                margin: 10px 5px; // 上下 10px 左右 5px 外距
+                a { // 選單連結
+                    text-decoration: none; // 無文字裝飾
+                    color: #ffffff; // 文字顏色白色
+                    padding: 5px 10px; // 內距 上下 5px 左右 10px
+                    letter-spacing: 2px; // 字距 2px
+                    border-bottom: 1px solid #ffffff; // 下邊框白色實線
+                    &:hover { // 滑鼠懸停時
+                        background: coral; // 背景色珊瑚色
+                        border-bottom: 1px solid coral; // 下邊框珊瑚色
+                        transition: 0.4s; // 動畫過渡 0.4 秒
+                    }
+                }
+            }
+        }
+    }
+    .msg { // 歡迎訊息區塊
+        position: relative; // 相對定位
+        text-align: center; // 文字置中
+        font-family: sans-serif; // 無襯線字型
+        color: #ffffff; // 文字顏色白色
+        top: 200px; // 距離頂部 200px
+        h1{ // 標題
+            font-size: 52px; // 字體大小 52px
+            margin: 25px; // 外距 25px
+        }
+        .btn { // 按鈕樣式
+            font-size: 18px; // 字體大小 18px
+            color: #ffffff; // 文字顏色白色
+            letter-spacing: 2px; // 字距 2px
+            padding: 7px 28px; // 內距 上下 7px 左右 28px
+            text-decoration: none; // 無文字裝飾
+            border: 1px solid coral; // 邊框為 1px 珊瑚色實線
+            border-radius: 25px; // 邊角圓弧 25px
+        }
+        
+        .btn1 { // 訂閱按鈕
+            background: coral; // 背景色珊瑚色
+            color: #ffffff; // 文字顏色白色
+        }
+        
+        .btn2 { // 留言按鈕
+            &:hover { // 滑鼠懸停時
+                background: coral; // 背景色變為珊瑚色
+                transition: 0.4s; // 動畫過渡 0.4 秒
+            }
+        }
+    }
+}	
+
+@media (min-aspect-ratio: 16/9) { // 螢幕比例大於等於 16:9 時
+        .video-background {
+            width: 100%; // 寬度 100%
+            height: auto; // 高度自動
+        }
+}
+
+@media (max-aspect-ratio: 16/9) { // 螢幕比例小於等於 16:9 時
+        .video-background {
+            width: auto; // 寬度自動
+            height: 100%; // 高度 100%
+        }
+}
