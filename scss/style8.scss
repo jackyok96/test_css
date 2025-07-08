@@ -1,0 +1,56 @@
+* { // 全域選擇器，選取所有元素
+    padding: 0; // 設定內距為 0
+    margin: 0; // 設定外距為 0
+    box-sizing: border-box; // 盒模型以 border 計算寬高
+    font-family: 'Poppins'; // 設定全域字型為 Poppins
+}
+
+.container { // 容器區塊
+    width: 100%; // 寬度 100%
+    height: 100vh; // 高度為視窗高度
+    background-color: rgba(0,0,0,0.4); // 半透明黑色背景
+    display: flex; // 使用 flex 排版
+    align-items: center; // 垂直置中
+    justify-content: center; // 水平置中
+    .background-clip { // 背景影片區塊
+        position: absolute; // 絕對定位
+        right: 0; // 右對齊
+        bottom: 0; // 下對齊
+        z-index: -1; // 堆疊順序設為 -1，置於底層
+    }
+    .content { // 內容區塊
+        text-align: center; // 文字置中
+        h1 { // 標題
+            font-size: 95px; // 字體大小 95px
+            color: #ffffff; // 文字顏色白色
+            margin-bottom: 50px; // 下方外距 50px
+        }
+        a { // 連結按鈕
+            font-size: 23px; // 字體大小 23px
+            color: #ffffff; // 文字顏色白色
+            text-decoration: none; // 無文字裝飾
+            border: 1px solid #ffffff; // 邊框為 1px 白色實線
+            padding: 15px 25px; // 內距 上下 15px 左右 25px
+            border-radius: 50px; // 邊角圓弧 50px
+            transition: 0.3s; // 動畫過渡 0.3 秒
+            &:hover { // 滑鼠懸停時
+                background-color: #ffffff; // 背景色變為白色
+                color: #000; // 文字顏色變為黑色
+            }
+        }
+    }
+}
+
+@media (min-aspect-ratio: 16/9) { // 螢幕比例大於等於 16:9 時
+    .background-clip {
+        width: 100%; // 寬度 100%
+        height: auto; // 高度自動
+    }
+}
+
+@media (max-aspect-ratio: 16/9) { // 螢幕比例小於等於 16:9 時
+    .background-clip {
+        width: auto; // 寬度自動
+        height: 100%; // 高度 100%
+    }
+}
